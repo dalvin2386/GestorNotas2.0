@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GestorNotas2._0.Views.AddEditView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModel="clr-namespace:GestorNotas2._0.ViewModels"
+    Title=""
+    x:DataType="viewModel:AddEditViewModel">
+    <VerticalStackLayout Padding="20" Spacing="30">
+
+        <Label
+            FontAttributes="Bold"
+            FontSize="30"
+            HorizontalTextAlignment="Center"
+            Text="Escribe tu nota"
+            TextColor="Navy" />
+
+        <Label
+            FontAttributes="Bold"
+            FontSize="Medium"
+            TextColor="Navy">
+            Titulo de la nota
+        </Label>
+        <Entry Placeholder="Escriba un titulo de su nota" Text="{Binding Titulo}" />
+        <Label
+            FontAttributes="Bold"
+            FontSize="Medium"
+            TextColor="Navy">
+            Contenido
+        </Label>
+        <Editor
+            x:Name="comentarioEditor"
+            AutoSize="TextChanges"
+            HeightRequest="150"
+            Placeholder="Escribe tus comentarios aquí..."
+            Text="{Binding Contenido}" />
+        <Button
+            Background="Green"
+            Command="{Binding AddUpdateCommand}"
+            HorizontalOptions="Center"
+            Text="Guardar Nota" />
+
+
+    </VerticalStackLayout>
+</ContentPage>
